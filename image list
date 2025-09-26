@@ -1,0 +1,62 @@
+https://www.freepik.com/free-vector/cloud-robotics-abstract-concept-illustration_12291072.htm#fromView=image_search&page=1&position=18&uuid=ce2b66ff-73e5-4279-8a2e-69c17d57da40
+
+
+
+
+přihlášení,registracew
+
+id,
+username,
+email,
+password,
+plan
+userCode == tento kod bude použit pro oveření přihlášeneho
+
+
+
+uživatele se přihlásí vygeneruje se kod 0v0aa77@@@aa tento se aktulizuje v poli
+userCode a uloží se do jsw token a během toho co uživatel bude na strasně se
+bude oveřevovat autorizace    
+
+
+během registrace se pouze přidá , session místo jsw tokenu 
+
+
+následně vymyslet rozehraní pro admin
+
+
+udělat db pro přihlašení a registraci
+implemenov backend logiku pro login a registraci
+
+o testovat bezpečnost
+
+upravit kod
+
+
+udělat design pro dashboard 
+
+
+
+josefNovnotny@gmail.com heslo = a
+tvrdikmichael@gmai.com heslo = a
+
+
+
+
+refacoring
+desing 
+test 
+
+
+
+
+chybí:
+můj plan
+
+
+
+
+fakturka_cashflow (prijmy a vydaje);
+
+id,userID,operation,date,description(text),payment(by card,cash)
+amount(int),categorie(text),note(teg)

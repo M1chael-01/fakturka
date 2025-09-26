@@ -1,0 +1,117 @@
+
+***** GENERAL SETTING *******
+CREATE DATABASE fakturka_general_setting
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
+
+***** FAKTURKA CASHFLOW *******
+CREATE DATABASE fakturka_cashflow
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
+CREATE TABLE public.one_cashflow
+(
+    id numeric,
+    "userID" numeric,
+    operation text,
+    date date,
+    description text,
+    payment text,
+    amount numeric,
+    categorie text,
+    note text,
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE IF EXISTS public.one_cashflow
+    OWNER to postgres;
+
+
+
+
+CREATE DATABASE fakturka_business
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
+
+CREATE TABLE public.one_business (
+    id SERIAL PRIMARY KEY,
+    "userID" INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    phone TEXT NOT NULL,
+    place TEXT NOT NULL,
+    ico TEXT,
+    bank TEXT,
+    note TEXT,
+    operation TEXT NOT NULL  -- 'customer' or 'supplier'
+);
+
+-- Set owner
+ALTER TABLE IF EXISTS public.one_business
+    OWNER to postgres;
+
+
+
+pays
+id,userID,paid(bool),plan(number),date
+
+CREATE DATABASE fakturka_payment
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
+  CREATE TABLE public.one_payment
+(
+    id SERIAL PRIMARY KEY,
+    "userID" numeric NOT NULL,
+    paid boolean NOT NULL,
+    plan numeric NOT NULL,
+    date date NOT NULL
+);
+
+ALTER TABLE IF EXISTS public.one_payment
+    OWNER to postgres;
+
+
+
+
+
+CREATE DATABASE fakturka_invoices
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LOCALE_PROVIDER = 'libc'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
+
+
+    CREATE TABLE public.one_invoice
+(
+)
+;
+
+ALTER TABLE IF EXISTS public.one_invoice
+    OWNER to postgres;

@@ -1,0 +1,151 @@
+💼 Funkce aplikace pro zpracování faktur a podnikání
+🔢 Fakturační modul
+Vytvoření a správa faktur (ručně nebo automaticky)
+
+Podpora různých měn a jazyků
+
+Generování PDF a odeslání e-mailem
+
+Možnost přidání loga firmy a personalizace šablon
+
+QR kód pro platbu (např. podle českého standardu)
+
+🧾 Evidence dokladů a příjmů/výdajů
+Ukládání přijatých i vystavených dokladů
+
+Možnost nahrát účtenky nebo faktury jako obrázek/PDF
+
+Automatické rozpoznání údajů (OCR)
+
+💳 Platby & integrace
+Napojení na platební brány (Stripe, PayPal, QR platba, GoPay)
+
+Sledování stavu platby (zaplaceno / čeká na úhradu / po splatnosti)
+
+Notifikace a připomínky neuhrazených faktur
+
+📊 Statistiky & přehledy
+Týdenní/měsíční přehled příjmů a výdajů
+
+Grafy: hotovostní tok, top klienti, neuhrazené faktury
+
+Export dat do CSV nebo Excelu
+
+👥 Klientská databáze
+Správa kontaktů a zákazníků
+
+Historie objednávek a faktur pro každého klienta
+
+Upozornění na opakující se fakturaci
+
+⏱️ Opakované faktury a předplatné
+Možnost nastavit periodické faktury (měsíčně, ročně…)
+
+Automatické zasílání faktur klientům
+
+📦 Správa produktů/služeb
+Uložení často používaných položek
+
+Ceník produktů/služeb
+
+Jednoduché přidání položek do faktury
+
+🔐 Přihlášení & zabezpečení
+Registrace a přihlášení (e-mail, Google)
+
+Role uživatelů (např. účetní, admin)
+
+Dvoufázové ověření (2FA)
+
+✨ Bonusové funkce (rozšíření)
+Mobilní aplikace pro správu faktur na cestách
+
+Napojení na účetnictví (např. Pohoda, iDoklad, Money S3)
+
+Automatické párování plateb z banky (např. pomocí FIO API)
+
+EET nebo Daňová evidence (pro CZ/SK trh)
+
+Dark mode, custom dashboard
+
+Chceš z toho vytvořit plán vývoje (MVP → finální produkt), návrh databáze, nebo přímo komponenty v Reactu/Next.js? Můžeme to rozpracovat dál podle tvého cíle.
+
+
+
+You said:
+lze to udělat reactem a express.js
+
+ChatGPT said:
+Ano, určitě to lze udělat pomocí Reactu (frontend) a Express.js (backend) — je to dokonce velmi vhodná kombinace pro vývoj moderní webové aplikace pro zpracování faktur.
+
+✅ Jak by to mohlo fungovat:
+🖥️ Frontend – React.js
+React bude zodpovědný za uživatelské rozhraní:
+
+Formuláře pro vystavení faktur
+
+Tabulky s přehledem dokladů a klientů
+
+Grafy a statistiky (např. s knihovnou Chart.js nebo Recharts)
+
+Autentizace (např. s JWT nebo Firebase)
+
+Nahrávání souborů (účtenky, loga faktur)
+
+PDF generace (např. pomocí react-pdf nebo jspdf)
+
+🔙 Backend – Express.js (Node.js)
+Express bude zajišťovat veškerou logiku, validace a komunikaci s databází:
+
+REST API pro CRUD operace: faktury, klienti, položky, platby
+
+Autentizace (JWT + bcrypt pro hashování hesel)
+
+Napojení na databázi (PostgreSQL / MongoDB / MySQL)
+
+Integrace se Stripe, PayPal nebo bankovními API
+
+Generování PDF server-side (např. s knihovnou pdfkit nebo puppeteer)
+
+Ukládání a čtení nahraných souborů
+
+E-mailové notifikace (např. přes Nodemailer)
+
+🗄️ Možná struktura projektu
+bash
+Copy
+Edit
+/client               ← React frontend (create-react-app)
+/server               ← Express backend
+  └── routes          ← API endpoints (invoices, users, etc.)
+  └── controllers     ← Business logic
+  └── models          ← DB models (Mongoose / Sequelize)
+  └── middlewares     ← Auth, error handling
+  └── services        ← Stripe, email, PDF generation
+.env
+package.json
+README.md
+🧱 Databáze
+Můžeš použít například:
+
+PostgreSQL (např. s ORM knihovnou Sequelize)
+
+MongoDB (s Mongoose, pokud chceš víc flexibilní datový model)
+
+💡 Shrnutí
+React + Express je skvělý stack pro:
+
+Rychlý vývoj
+
+Dobré oddělení frontend/backend logiky
+
+Snadné nasazení (např. Vercel + Render, Railway, DigitalOcean)
+
+Podporu všech funkcí, které fakturační appka potřebuje
+
+
+
+
+
+2.8 2025
+
