@@ -13,7 +13,7 @@ const TABLE = process.env.TABLE;
  * ========================================
  */
 
-// 🟢 Register a new user
+//  Register a new user
 async function register(req, res) {
   const { email, username, password } = req.body;
 
@@ -77,7 +77,7 @@ async function createDefaultAppSetting(userId) {
   }
 }
 
-// 🔐 Login user
+//  Login user
 async function login(req, res) {
   const { email, password } = req.body;
   const code = utils.generateCode();
@@ -106,7 +106,7 @@ async function login(req, res) {
   }
 }
 
-// ✅ Check if user is logged in via token
+//  Check if user is logged in via token
 async function isLogin(req, res) {
   const token = req.session?.user?.token;
   if (!token) return res.status(401).json({ message: "Chybí token v session." });
@@ -126,7 +126,7 @@ async function isLogin(req, res) {
   }
 }
 
-// ❓ Verify user by ID + code
+//  Verify user by ID + code
 async function checkUserAutentizationCode(id, code, pool) {
   try {
     const result = await pool.query(

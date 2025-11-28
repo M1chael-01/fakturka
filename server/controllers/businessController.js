@@ -1,4 +1,4 @@
-// 📦 Dependencies
+//  Dependencies
 const { business } = require("../config/db");
 const Utils = require("../utils/utils");
 require("dotenv").config();
@@ -7,7 +7,7 @@ const utils = new Utils();
 
 /**
  * ================================
- * 📥 CREATE RECORD FUNCTIONS
+ *  CREATE RECORD FUNCTIONS
  * ================================
  */
 
@@ -58,7 +58,7 @@ async function CreateNewRecord(req, res, operation) {
 
 /**
  * ================================
- * 📄 SELECT RECORD FUNCTIONS
+ *  SELECT RECORD FUNCTIONS
  * ================================
  */
 

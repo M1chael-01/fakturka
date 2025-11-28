@@ -1,20 +1,18 @@
 // Import required modules
-require("dotenv").config(); // Načte .env proměnné
+require("dotenv").config(); 
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 
 // Import middleware and route modules
-const sessionMiddleware = require("./config/session"); // Optional: pokud používáš sessions
-const authRoutes = require("./routers/authRoutes"); // Authentication-related routes
-const appSettingController = require("./routers/appSettingRoute"); // User settings routes
-const cashflowController = require("./routers/cashflow"); // Cashflow-related routes
-const businessController = require("./routers/businessRouter"); // Business management routes
-const exportController = require("./routers/exportRouter"); // Exporting/reporting routes
-const paymentController = require("./routers/paymentRouter"); // Payment routes
+const sessionMiddleware = require("./config/session"); 
+const authRoutes = require("./routers/authRoutes"); 
+const appSettingController = require("./routers/appSettingRoute"); 
+const cashflowController = require("./routers/cashflow"); 
+const businessController = require("./routers/businessRouter"); 
+const exportController = require("./routers/exportRouter"); 
+const paymentController = require("./routers/paymentRouter"); 
 const invoicesController = require("./routers/invoicesRoute");
-
-
 // Initialize Express application
 const app = express();
 
@@ -34,9 +32,6 @@ app.use(cors({
 }));
 
 // Middleware pro čtení cookies
-
-
-// Session middleware (volitelně, pokud stále potřebuješ sessions)
 app.use(sessionMiddleware);
 
 // Middleware pro parsování JSONu
@@ -51,7 +46,6 @@ app.use(express.json());
 // Auth routes (login, logout, check login)
 app.use("/auth", authRoutes);
 
-// Protected routes – dostupné jen s platným JWT
 app.use("/userSetting", appSettingController);
 app.use("/cashflow",cashflowController);
 app.use("/business", businessController);
@@ -66,8 +60,8 @@ app.use("/invoice" , invoicesController);
  * ====================
  */
 
-// Definuj port serveru
+
 const PORT = process.env.PORT || 5000;
 
-// Spusť server
+
 app.listen(PORT, () => console.log(`Server běží na portu ${PORT}`));
