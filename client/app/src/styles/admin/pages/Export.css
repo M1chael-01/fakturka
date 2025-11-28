@@ -1,0 +1,214 @@
+/* Reset a základ */
+* {
+  box-sizing: border-box;
+}
+
+/* Container exportu */
+.export-container {
+  max-width: 920px;
+  margin: 8em auto;
+  height: 47vh;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.export-container:hover {
+  box-shadow: 0 12px 36px rgb(0 0 0 / 0.15);
+}
+
+/* Hlavní nadpis */
+.export-container h1 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  color: #0d47a1;
+  text-align: center;
+}
+
+/* Sekce - nadpis */
+.export-container section {
+  margin-bottom: 30px;
+}
+
+.export-container h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1565c0;
+  border-bottom: 2px solid #90caf9;
+  padding-bottom: 6px;
+}
+
+/* Radio group - styl */
+.radio-group {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.radio-group label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #e3f2fd;
+  border-radius: 30px;
+  padding: 10px 20px;
+  user-select: none;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+
+.radio-group label:hover {
+  background-color: #bbdefb;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.15);
+}
+
+.radio-group input[type="radio"] {
+  accent-color: #1976d2;
+  width: 18px;
+  height: 18px;
+}
+
+/* Ikony a text vedle sebe */
+.icon-label {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0d47a1;
+}
+
+/* Checkbox group */
+.checkbox-group {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-group label {
+  cursor: pointer;
+  font-weight: 500;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: #e8f0fe;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.07);
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkbox-group label:hover {
+  background-color: #d1e3fc;
+  box-shadow: 0 5px 12px rgb(0 0 0 / 0.1);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1976d2;
+}
+
+/* Export button */
+.export-button {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  background-color: #1565c0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 15px rgb(21 101 192 / 0.6);
+}
+
+.export-button:hover {
+  background-color: #0d3c82;
+  box-shadow: 0 8px 25px rgb(13 60 130 / 0.8);
+}
+
+.export-button:active {
+  transform: scale(0.98);
+}
+
+/* DARK MODE */
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark .export-container {
+ background: #1f2937;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .export-container h1,
+body.dark .export-container h2,
+body.dark .icon-label {
+  color: #90caf9;
+}
+
+body.dark .radio-group label {
+  background: #263238;
+  box-shadow: 0 1px 3px rgba(255 255 255 / 0.1);
+  color: #bbdefb;
+}
+
+body.dark .radio-group label:hover {
+  background-color: #455a64;
+  box-shadow: 0 4px 10px rgba(255 255 255 / 0.2);
+}
+
+body.dark .checkbox-group label {
+  background: #263238;
+  color: #cfd8dc;
+  box-shadow: 0 1px 3px rgba(255 255 255 / 0.1);
+}
+
+body.dark .checkbox-group label:hover {
+  background-color: #455a64;
+  box-shadow: 0 5px 12px rgba(255 255 255 / 0.15);
+}
+
+body.dark .export-button {
+  background-color: #90caf9;
+  color: #121212;
+  box-shadow: 0 4px 15px rgba(144 202 249 / 0.7);
+}
+
+body.dark .export-button:hover {
+  background-color: #64b5f6;
+  box-shadow: 0 8px 25px rgba(100 181 246 / 0.9);
+}
+
+body.dark .export-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .export-container {
+    padding: 20px 25px;
+  }
+}

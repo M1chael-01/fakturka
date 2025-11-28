@@ -1,0 +1,153 @@
+/* Overlay for modal background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal content window */
+.modal-window {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 460px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+body.dark .modal-window {
+  background-color: #1e293b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Headline */
+.modal-window h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+body.dark .modal-window h2 {
+  color: #f1f5f9;
+}
+
+/* Paragraph text */
+.modal-window p {
+  margin-bottom: 1.2rem;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body.dark .modal-window p {
+  color: #cbd5e1;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+body.dark .checkbox-group {
+  color: #e2e8f0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Button layout */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* All buttons */
+.modal-button,
+.modal-cancel,
+.modal-confirm {
+  padding: 0.6rem 1.3rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Confirm (primary) */
+.modal-confirm {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+.modal-confirm:hover {
+  background-color: #005fa3;
+}
+
+.modal-confirm:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Cancel (secondary) */
+.modal-cancel {
+  background-color: #eee;
+  color: #333;
+}
+
+.modal-cancel:hover {
+  background-color: #ddd;
+}
+
+body.dark .modal-cancel {
+  background-color: #334155;
+  color: #f1f5f9;
+}
+
+body.dark .modal-cancel:hover {
+  background-color: #475569;
+}
+
+/* Link */
+.modal-link a {
+  color: #0077cc;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.modal-link a:hover {
+  text-decoration: none;
+}
+
+body.dark .modal-link a {
+  color: #60a5fa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,242 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset margins, padding and set box-sizing globally */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles: sticky with shadow */
+.header {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  font-family: "Open Sans", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Keep header above other content */
+}
+
+/* Main navigation container */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Logo styles */
+.logo a {
+  color: #1a1a1a;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  position: relative;
+}
+
+.logo .style {
+  color: #7b3fe4;
+  transition: color 0.3s ease;
+}
+
+.logo:hover .style {
+  color: #005fa3;
+}
+
+/* Main navigation list styles */
+.nav-main {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  font-size: 18px;
+  position: relative;
+  transition: max-height 0.3s ease; /* Smooth open/close animation */
+}
+
+/* Navigation links styles */
+.nav-main li a {
+  color: #444;
+  text-decoration: none;
+  padding: 10px 12px;
+  font-weight: 600;
+  transition: color 0.25s ease;
+  border-radius: 6px;
+  font-size: 19px;
+}
+
+/* Hover and focus effects for nav links */
+.nav-main li a:hover,
+.nav-main li a:focus {
+  color: #007acc;
+  background-color: rgba(0, 122, 204, 0.1);
+  outline: none;
+}
+
+/* Container for login/register buttons */
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  font-size: 18px;
+  align-items: center;
+}
+
+/* Styles for all nav-links buttons */
+.nav-links a {
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+  user-select: none;
+}
+
+/* Login button (green) */
+.nav-links .login {
+  background-color: #06c706;
+  color: #fff;
+  border: none;
+}
+
+/* Hover/focus effect for login button */
+.nav-links .login:hover,
+.nav-links .login:focus {
+  background-color: #04a904;
+  box-shadow: 0 5px 14px rgba(6, 199, 6, 0.5);
+  outline: none;
+}
+
+/* Register button (blue) */
+.nav-links .create a {
+  background-color: #7b3fe4;
+  color: #fff;
+  border: none;
+}
+
+/* Hover/focus effect for register button */
+.nav-links .create a:hover,
+.nav-links .create a:focus {
+  background-color: #005fa3;
+  box-shadow: 0 5px 14px rgba(0, 122, 204, 0.5);
+  outline: none;
+}
+
+/* Hamburger menu button styles - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101; /* On top of other elements */
+}
+
+/* Hamburger lines */
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+}
+
+/* Hamburger active state transforms */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 8px;
+  position: relative;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -8px;
+  position: relative;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 900px) {
+  /* Adjust main nav padding */
+  .main-nav {
+    padding: 20px 30px;
+  }
+
+  /* Smaller logo and reset left position */
+  .logo {
+    font-size: 38px;
+    left: 0;
+  }
+
+  /* Hide main navigation list by default (collapsed menu) */
+  .nav-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%; /* Below the nav */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: max-height 0.3s ease-in-out;
+    z-index: 99;
+    padding: 0;
+  }
+
+  /* Show menu when open */
+  .nav-main.open {
+    max-height: 300px; /* Adjust height as needed */
+    padding: 10px 0;
+  }
+
+  /* Remove margins from nav items */
+  .nav-main li {
+    margin: 0;
+  }
+
+  /* Nav links styling for mobile */
+  .nav-main li a {
+    padding: 15px 20px;
+    font-size: 18px;
+    display: block;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Remove border from last nav item */
+  .nav-main li a:last-child {
+    border-bottom: none;
+  }
+
+  /* Reduce gap between login/register buttons */
+  .nav-links {
+    gap: 12px;
+  }
+
+  /* Show hamburger menu button */
+  .hamburger {
+    display: flex;
+  }
+}

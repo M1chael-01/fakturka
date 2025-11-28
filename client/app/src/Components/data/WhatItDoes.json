@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Vystavování faktur",
+    "description": "Jednoduše vytvoříte fakturu během několika sekund. Přehledný editor, automatické číslování i šablony.",
+    "icon": "🧾"
+    },
+     {
+    "title": "Přehledné grafy",
+    "description": "Získejte okamžitý přehled o příjmech, výdajích a neuhrazených fakturách díky interaktivním grafům.",
+    "icon": "📊"
+  },
+  {
+    "title": "Digitalizace dokladů",
+    "description": "Naskenujte nebo nahrajte účtenky, Fakturka je přečte a zařadí do účetnictví automaticky.",
+    "icon": "📎"
+  },
+  {
+    "title": "Online archivace",
+    "description": "Vaše dokumenty jsou bezpečně uloženy v cloudu a dostupné odkudkoli.",
+    "icon": "☁️"
+  },
+  {
+    "title": "Exporty pro účetní",
+    "description": "Exportujte data do PDF, XML, nebo formátu účetních programů – snadno a rychle.",
+    "icon": "📤"
+  },
+  {
+    "title": "Správa kontaktů",
+    "description": "Ukládejte údaje o klientech a dodavatelích, připravte si kontakty pro opakované faktury.",
+    "icon": "👥"
+  },
+  {
+    "title": "Opakované faktury",
+    "description": "Nastavte si pravidelné faktury, které se budou generovat a odesílat automaticky.",
+    "icon": "♻️"
+  },
+  {
+    "title": "Podpora více měn",
+    "description": "Fakturujte zákazníkům v různých měnách s aktuálními směnnými kurzy.",
+    "icon": "💱"
+  }
+]

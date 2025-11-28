@@ -1,0 +1,433 @@
+.invoice-editor-cz {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 30px 40px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  height: 100%;
+  color: #222;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  line-height: 1.4;
+}
+
+/* Nadpis */
+.invoice-editor-cz h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #004085;
+}
+
+/* Dodavatel a odběratel vedle sebe */
+.parties {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.parties > div {
+  width: 48%;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.parties h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #004085;
+  border-bottom: 2px solid #004085;
+  padding-bottom: 5px;
+}
+
+.parties p {
+  margin: 5px 0;
+}
+
+/* Datum a ostatní údaje v řádcích */
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #fefefe;
+}
+
+.dates p {
+  flex: 1 1 200px;
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.dates input[type="date"],
+.dates select,
+.dates input[type="text"] {
+  margin-top: 4px;
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.dates input[type="date"]:focus,
+.dates select:focus,
+.dates input[type="text"]:focus {
+  outline: none;
+  border-color: #004085;
+}
+
+/* Tabulka položek */
+.items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.items th,
+.items td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.items th {
+  background-color: #004085;
+  color: white;
+  font-weight: 600;
+  user-select: none;
+}
+
+.items input[type="text"],
+.items input[type="number"] {
+  width: 100%;
+  padding: 4px 6px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.items input[type="text"]:focus,
+.items input[type="number"]:focus {
+  outline: none;
+  border-color: #004085;
+}
+
+.items button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #dc3545;
+  transition: color 0.2s ease;
+}
+
+.items button:hover {
+  color: #a71d2a;
+}
+
+/* Přidat položku */
+button {
+  background-color: #004085;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #002752;
+}
+
+/* Poznámky */
+textarea {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #004085;
+}
+
+/* QR a podpis */
+.qr-signature-row {
+  margin-top: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.qr-box {
+  flex-shrink: 0;
+  text-align: center;
+  font-weight: 600;
+  color: #004085;
+}
+
+.payment-info-box p {
+  margin: 6px 0;
+}
+
+.payment-info-box label {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.payment-info-box input[type="number"] {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  padding: 4px 6px;
+  font-size: 14px;
+  margin-left: 8px;
+  width: 100px;
+}
+
+.signature-razitko-box p {
+  font-weight: 600;
+  color: #004085;
+  margin-bottom: 8px;
+}
+
+.signature-box {
+  border: 1.5px solid #000;
+  width: 160px;
+  height: 80px;
+  background-color: #fff;
+  box-shadow: inset 0 0 4px #ccc;
+}
+
+/* Součty */
+.totals {
+  margin-top: 30px;
+  border-top: 2px solid #004085;
+  padding-top: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+}
+
+.totals p {
+  margin: 5px 0;
+}
+
+.totals h2 {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #004085;
+}
+
+/* Patka */
+.footer {
+  margin-top: 35px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Akční tlačítka */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+}
+
+.actions button {
+  min-width: 120px;
+  font-size: 15px;
+  padding: 12px 0;
+}
+
+  /* Skryj tlačítka a akce při PDF exportu */
+.pdf-mode button,
+.pdf-mode .add-item-button,
+.pdf-mode .remove-item-btn,
+.pdf-mode select,
+.pdf-mode input,
+.pdf-mode textarea {
+  display: none !important;
+}
+
+/* Změna inputu na vzhled prostého textu */
+.pdf-mode p input,
+.pdf-mode p select,
+.pdf-mode p textarea {
+  border: none !important;
+  background: transparent !important;
+  color: #000000 !important;
+  
+  pointer-events: none;
+  
+}
+
+/* Změna okraje tabulky pro PDF */
+.pdf-mode table,
+.pdf-mode th,
+.pdf-mode td {
+  border: 1px solid #000 !important;
+}
+
+
+
+/* Zarovnání obsahu v PDF */
+.pdf-mode td,
+.pdf-mode th {
+  padding: 6px;
+  text-align: left;
+}
+
+/* Profesionálnější vzhled podpisu */
+.pdf-mode .stamp > div {
+  border: 1px dashed #000;
+}
+
+
+
+/* 🌙 Dark Mode Styles */
+body.dark .invoice-editor-cz {
+  background: #1e1e1e;
+  color: #e5e7eb;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .invoice-editor-cz h1,
+body.dark .invoice-editor-cz h2,
+body.dark .invoice-editor-cz h3 {
+  color: #60a5fa;
+}
+
+body.dark .parties > div,
+body.dark .dates {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark .parties h3,
+body.dark .signature-razitko-box p,
+body.dark .qr-box {
+  color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+body.dark .dates p {
+  color: #e5e7eb;
+}
+
+body.dark .dates input[type="date"],
+body.dark .dates input[type="text"],
+body.dark .dates select,
+body.dark .items input[type="text"],
+body.dark .items input[type="number"],
+body.dark textarea,
+body.dark .payment-info-box input[type="number"] {
+  background-color: #1f2937;
+  border: 1px solid #555;
+  color: #f9fafb;
+}
+
+body.dark .dates input[type="date"]:focus,
+body.dark .dates select:focus,
+body.dark .dates input[type="text"]:focus,
+body.dark .items input[type="text"]:focus,
+body.dark .items input[type="number"]:focus,
+body.dark textarea:focus {
+  border-color: #60a5fa;
+}
+
+body.dark .items th {
+  background-color: #1e3a8a;
+  color: #f9fafb;
+}
+
+body.dark .items td {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark .items button {
+  color: #f87171;
+}
+
+body.dark .items button:hover {
+  color: #dc2626;
+}
+
+body.dark button {
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+body.dark button:hover {
+  background-color: #0f172a;
+}
+
+body.dark .signature-box {
+  background-color: #111827;
+  border-color: #e5e7eb;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .totals {
+  border-top-color: #60a5fa;
+  color: #f3f4f6;
+}
+
+body.dark .totals h2 {
+  color: #60a5fa;
+}
+
+body.dark .footer {
+  color: #9ca3af;
+  border-top-color: #444;
+}
+
+
+
+
+/* Responsive pro menší šířky */
+@media (max-width: 720px) {
+  .parties {
+    flex-direction: column;
+  }
+  .parties > div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .dates {
+    flex-direction: column;
+  }
+  .dates p {
+    flex: 1 1 100%;
+  }
+  .qr-signature-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

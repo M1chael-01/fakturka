@@ -1,0 +1,268 @@
+/* Container celé stránky */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Box přihlášení */
+.login-box {
+  background: #ffffffee;
+  padding: 48px 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 620px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo / název */
+.login-header .brand {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4a148c; /* tmavší fialová */
+  margin-bottom: 28px;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+/* Formulář */
+.login-form input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  background: #fafafa;
+  transition: border-color 0.25s ease;
+}
+
+.login-form input::placeholder {
+  color: #999;
+}
+
+.login-form input:focus {
+  border-color: #7b3fe4; /* fialová */
+  background: #fff;
+  outline: none;
+}
+
+/* Tlačítko */
+.login-form button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #7b3fe4;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(123, 63, 228, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #5a2ecc;
+  box-shadow: 0 8px 20px rgba(90, 46, 204, 0.6);
+}
+
+/* Oddělovač */
+.divider {
+  position: relative;
+  margin: 24px 0;
+  font-size: 1.05rem;
+  color: #666;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* Odkaz na registraci */
+.register-link {
+  font-size: 0.95rem;
+  color: #555;
+  user-select: none;
+}
+
+.register-link a {
+  color: #7b3fe4;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.register-link a:hover {
+  color: #5a2ecc;
+  text-decoration: underline;
+}
+
+
+
+/* Celá stránka */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Box formuláře */
+.register-box {
+  background: #ffffffee;
+  padding: 48px 40px 48px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 850px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.register-box:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Nadpis */
+.register-header h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  user-select: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.angled-line {
+  width: 400px;
+  height: 4px;
+  margin: 0 auto 25px auto;
+  background-color: #7b3fe4;
+  opacity: 0.6;
+  transform: rotate(-1deg); /* změň úhel podle potřeby */
+}
+
+
+/* Formulář */
+.register-form label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  color: #4b3e7b;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: 2px solid #c2bde9;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #fafaff;
+  outline-offset: 2px;
+}
+
+.register-form input::placeholder {
+  color: #b1aee2;
+}
+
+.register-form input:focus {
+  border-color: #5a3fed;
+  box-shadow: 0 0 8px rgba(90, 63, 237, 0.5);
+  background: #fff;
+  outline: none;
+}
+
+/* Chybová zpráva */
+.error-message {
+  color: #e0515d;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Tlačítko */
+.register-btn {
+  width: 100%;
+  padding: 16px 0;
+  background: linear-gradient(90deg, #6548f5 0%, #7b3fe4 100%);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(123, 63, 228, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, #7b3fe4 0%, #6548f5 100%);
+  box-shadow: 0 12px 30px rgba(123, 63, 228, 0.7);
+}
+
+/* Přepínač mezi login/registrace */
+.switch-auth {
+  margin-top: 28px;
+  font-size: 1.1rem;
+  color: #4b3e7b;
+  user-select: none;
+}
+
+.switch-auth a {
+  color: #5a3fed;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.25s ease;
+}
+
+.switch-auth a:hover {
+  color: #7b3fe4;
+  text-decoration: underline;
+}
+
+.form-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.form-flex input{
+  width: 21.4em;
+}
+#login-box{
+    width: 100%;
+    max-width: 650px;
+}

@@ -1,0 +1,322 @@
+/* General Layout */
+.invoice-page {
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #2c3e50;
+  background-color: #f9fafc;
+  width: 80%;
+}
+
+/* Header */
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.invoice-header h1 {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Table */
+.invoice-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem;
+}
+
+.invoice-table th {
+  text-align: left;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.invoice-table td {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  vertical-align: middle;
+}
+
+.invoice-table .actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  color: #4b5563;
+  transition: color 0.2s ease;
+}
+
+.invoice-table .actions button:hover {
+  color: #111827;
+}
+
+/* Status Badges */
+.status {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+
+.status.paid {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status.unpaid {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #ffffff;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+}
+
+.file-upload label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modal-actions .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-actions .save {
+  background-color: #10b981;
+  color: white;
+}
+
+.modal-actions .save:hover {
+  background-color: #059669;
+}
+
+.modal-actions .reset {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.modal-actions .reset:hover {
+  background-color: #d1d5db;
+}
+
+/* dark mode */
+
+/* 🌙 Dark Mode Styles */
+body.dark {
+  background-color: #121212;
+  color: #e5e7eb;
+}
+
+/* Page background */
+body.dark .invoice-page {
+  background-color: #1e1e1e;
+  color: #e5e7eb;
+}
+
+/* Header */
+body.dark .invoice-header h1 {
+  color: #ffffff;
+}
+
+body.dark .add-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+body.dark .add-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Search Bar */
+body.dark .search-bar {
+  background: #2a2a2a;
+  box-shadow: none;
+}
+
+body.dark .search-bar input {
+  background: transparent;
+  color: #f3f4f6;
+}
+
+/* Table */
+body.dark .invoice-table th {
+  color: #9ca3af;
+}
+
+body.dark .invoice-table td {
+  background-color: #2a2a2a;
+  color: #e5e7eb;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.04);
+}
+
+body.dark .invoice-table .actions button {
+  color: #9ca3af;
+}
+
+body.dark .invoice-table .actions button:hover {
+  color: #ffffff;
+}
+
+/* Status Badges */
+body.dark .status.paid {
+  background-color: #064e3b;
+  color: #6ee7b7;
+}
+
+body.dark .status.unpaid {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+/* Modal */
+body.dark .modal {
+  background: #2b2b2b;
+  color: #f9fafb;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .form-group input,
+body.dark .form-group select {
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #f3f4f6;
+}
+
+body.dark .file-upload label {
+  color: #60a5fa;
+}
+
+/* Modal Buttons */
+body.dark .modal-actions .save {
+  background-color: #059669;
+}
+
+body.dark .modal-actions .reset {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+body.dark .modal-actions .reset:hover {
+  background-color: #4b5563;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

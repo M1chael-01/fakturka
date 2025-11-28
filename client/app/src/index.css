@@ -1,0 +1,7 @@
+/* Remove all default text decorations (like underlines on links) from all elements */
+* {
+  text-decoration: none;
+}
+
+
+/* dark mode setting  */

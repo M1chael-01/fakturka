@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Free Trial",
+    "price": "0 Kč",
+    "period": "na 14 dní",
+    "features": [
+      "Vyzkoušejte všechny funkce zdarma",
+      "Max. 5 faktur za měsíc",
+      "Základní podpora",
+      "A mnohem více,než si myslíte"
+    ],
+    "highlight": false,
+    "btnText": "Vyzkoušet zdarma"
+  },
+  {
+    "title": "Malý podnikatel",
+    "price": "499 Kč",
+    "period": "měsíčně",
+    "features": [
+      "Neomezený počet faktur",
+      "Správa klientů a produktů",
+      "Emailová podpora",
+      "Základní reporting"
+    ],
+    "highlight": true,
+    "btnText": "Vybrat plán"
+  },
+  {
+    "title": "Plátce DPH",
+    "price": "899 Kč",
+    "period": "měsíčně",
+    "features": [
+      "Vše z balíčku Malý podnikatel",
+      "Pokročilá DPH evidence",
+      "Export do účetnictví",
+      "Prioritní podpora"
+    ],
+    "highlight": false,
+    "btnText": "Vybrat plán"
+  }
+]

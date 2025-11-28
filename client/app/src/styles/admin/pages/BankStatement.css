@@ -1,0 +1,141 @@
+/* bankStatement.css */
+
+.bank-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.bank-container h2,
+.bank-container h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.balance {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.balance .positive {
+  color: #2d7a2d;
+}
+
+.balance .negative {
+  color: #a12929;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.transactions-table th,
+.transactions-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+.transactions-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+}
+
+.transactions-table tbody tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+
+.transactions-table tbody tr:hover {
+  background-color: #e6f0ff;
+}
+
+.transactions-table td.amount {
+  font-weight: 600;
+}
+
+.transactions-table td.amount.positive {
+  color: #2d7a2d;
+}
+
+.transactions-table td.amount.negative {
+  color: #a12929;
+}
+
+.send-money-form {
+  margin-bottom: 1.5rem;
+}
+
+.send-money-form > div {
+  margin-bottom: 1rem;
+}
+
+.send-money-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.send-money-form input {
+  width: 100%;
+  max-width: 260px;
+  padding: 0.4rem 0.6rem;
+  border: 1.8px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.send-money-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.send-money-form button {
+  background-color: #007bff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-money-form button:disabled {
+  background-color: #a0c7ff;
+  cursor: not-allowed;
+}
+
+.send-money-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+.message.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}

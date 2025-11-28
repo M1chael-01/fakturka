@@ -1,0 +1,95 @@
+/* ===== Základní nastavení pozadí ===== */
+
+/* Kontener pro celou sekci */
+body {
+  background-color: #f9f9ff; /* Jemné světlé pozadí pro celou stránku */
+}
+
+/* ===== Sekce "Proč Fakturka?" ===== */
+
+.why-section {
+  padding: 60px 20px; /* Vnitřní odsazení sekce */
+  text-align: center; /* Zarovnání textu na střed */
+  font-family: 'Segoe UI', sans-serif; /* Moderní bezpatkové písmo */
+}
+
+.why-container {
+  max-width: 1600px; /* Maximální šířka obsahu */
+  margin: 0 auto;     /* Centrovaní obsahu */
+}
+
+/* ===== Hlavní nadpis a podnadpis ===== */
+
+/* Hlavní nadpis sekce */
+.why-container h2 {
+  font-size: 2.8rem;       /* Velikost písma */
+  font-weight: 700;        /* Tlustý řez písma */
+  color: #4a148c;          /* Primární fialová barva */
+  margin-bottom: 20px;     /* Odsazení od následujícího prvku */
+}
+
+.subtitle {
+color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* ===== Mřížka pro karty ===== */
+
+/* Grid pro jednotlivé karty */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responzivní sloupce */
+  gap: 30px; /* Mezera mezi kartami */
+}
+
+/* ===== Styl pro jednotlivé informační karty ===== */
+
+.why-card {
+  background-color: white; /* Bílý podklad */
+  padding: 30px;
+  width: 100%;
+           /* Vnitřní odsazení */
+  border-radius: 15px;     /* Zaoblené rohy */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Jemný stín */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Plynulé animace */
+}
+
+/* Hover efekt pro kartu */
+.why-card:hover {
+  transform: translateY(-8px); /* Mírné "vyskočení" karty */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); /* Větší stín při přejetí */
+}
+
+/* Ikony na kartách */
+.why-icon {
+  font-size: 3rem;       /* Velká velikost ikony */
+  color: #7b3fe4;        /* Primární fialová barva */
+  margin-bottom: 2px;   /* Odsazení od nadpisu */
+}
+
+/* Nadpis uvnitř karty */
+.why-card h3 {
+  font-size: 1.5rem;     /* Velikost písma */
+  color: #333;           /* Tmavší barva pro lepší čitelnost */
+  font-weight: 700;      /* Tlustý řez */
+  margin-bottom: 15px;   /* Odsazení od textu */
+}
+
+/* Text uvnitř karty */
+.why-card p {
+  font-size: 1.1rem;     /* Mírně větší text pro lepší čitelnost */
+  color: #555;           /* Neutrální tmavě šedá barva */
+}
+
+/* ===== Responzivní úpravy pro menší zařízení ===== */
+
+@media (max-width: 768px) {
+  .why-container h2 {
+    font-size: 2.4rem; /* Menší nadpis na menších obrazovkách */
+  }
+
+  .why-card h3 {
+    font-size: 1.3rem; /* Menší nadpis karet na mobilech */
+  }
+}

@@ -1,0 +1,151 @@
+:root {
+  --color-primary: #6366f1;
+  --color-accent: #a855f7;
+  --color-bg: #f9fafb;
+  --color-dark: #111827;
+  --color-light: #ffffff;
+  --color-muted: #6b7280;
+  --radius: 14px;
+  --shadow-light: rgba(0, 0, 0, 0.06);
+  --shadow-strong: rgba(0, 0, 0, 0.12);
+}
+
+/* Top positioning */
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  top: -12rem;
+  min-height: 70vh;
+}
+
+/* Container */
+.my-account-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.4rem;
+  height: 47vh;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+body.dark .my-account-container {
+  background: rgba(31, 41, 55, 0.85);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Headline */
+.my-account-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #111827;
+}
+
+body.dark .my-account-container h2 {
+  color: #f1f5f9;
+}
+
+/* Form */
+.form-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+body.dark .form-group label {
+  color: #e5e7eb;
+}
+
+.form-input {
+  padding: 4rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+body.dark .form-input {
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+/* Buttons */
+.form-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  flex: 1 1 30%;
+  padding: 0.75rem;
+  font-size: 1.09rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 400px;
+}
+
+/* Button Styles */
+.primary {
+  background: linear-gradient(to right, #2563eb, #a855f7);
+  color: white;
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+.secondary {
+  background-color: #e4e6eb;
+  color: #333;
+}
+
+.secondary:hover {
+  background-color: #d0d3d8;
+}
+
+body.dark .secondary {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+body.dark .secondary:hover {
+  background-color: #4b5563;
+}
+
+.danger {
+  background: linear-gradient(to right, #1748b3, #923fdf);
+  color: white;
+}
+
+.danger:hover {
+  background-color: #dc2626;
+}

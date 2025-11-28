@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+ 
+  
+}
+
+/* Sekce Home */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 100px;
+  gap: 60px;
+  flex-wrap: wrap;
+  position: relative;
+  top: -70px;
+  left: 140px;
+}
+
+
+
+
+
+
+.home-content {
+  flex: 1;
+  max-width: 700px;
+  position: relative;
+}
+
+.home-content h2 {
+  font-size: 52px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.section-divider {
+  border: 3px solid orange;
+  margin: 0 0 15px;
+  border-radius: 100px;
+  transform: skewX(-15deg);
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  font-size: 19px;
+  color: #333;
+  margin-bottom: 18px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #00b894;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Obrázek */
+.home-image {
+  flex: 1;
+  text-align: center;
+}
+
+.home-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* CTA formulář */
+.cta-form {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cta-form input {
+  padding: 14px 18px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 260px;
+  outline: none;
+}
+
+.cta-form button {
+  background-color: #7b3fe4;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 19px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 -22px 0;
+  width: 240px;
+  transition: background-color 0.25s ease;
+}
+
+.cta-form button:hover {
+  background-color: #039403;
+}
+
+/* Responsivita */
+@media (max-width: 960px) {
+  .home {
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .home-content h2 {
+    font-size: 32px;
+  }
+
+  .feature-list li {
+    font-size: 17px;
+  }
+
+  .cta-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-form input,
+  .cta-form button {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-content h2 {
+    font-size: 28px;
+  }
+
+  .home-content ul {
+    font-size: 16px;
+  }
+
+  .cta-form input,
+  .cta-form button {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+  }
+
+  .home-image img {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+}

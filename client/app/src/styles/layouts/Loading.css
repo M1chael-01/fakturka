@@ -1,0 +1,37 @@
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f4f7fb;
+  color: #444;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.4rem;
+}
+.loading-screen p{
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+.loading-screen p span{
+color: #007acc;
+  transition: color 0.3s ease;
+}
+
+.spinner {
+  width: 140px;
+  height: 140px;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

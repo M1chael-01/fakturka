@@ -1,0 +1,750 @@
+.income-expense-page {
+  padding: 2.5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  color: #2c3e50;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.income-search-input {
+  padding: 50px;
+  height: 50px;
+  width: 100%;
+  margin: 0 0 10px;
+  max-width:500px;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.income-search-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.new-income-btn,.add-btn  {
+  background-color: #007bff;
+  color: white;
+  padding: 0.65rem 1.3rem;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.new-income-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.5);
+}
+
+
+/* Unikátní id #c se vyhneme, pokud není potřeba */
+#c {
+  width: 80%;
+  max-width: 100%;
+  margin: 40px auto;
+}
+
+.income-expense-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.income-expense-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.add-btn {
+  font-weight: 500;
+  padding: 12px 55px 12px;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.5);
+}
+
+.summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.summary .income,
+.summary .expense {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  min-width: 150px;
+  text-align: center;
+  user-select: none;
+}
+
+.summary .income {
+  background-color: #e6f4ea;
+  color: #27ae60;
+  border: 1.5px solid #27ae60;
+}
+
+.summary .expense {
+  background-color: #fdecea;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+}
+
+.entry-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* mezery mezi řádky pro lehkost */
+  background: transparent;
+  font-size: 1rem;
+  color: #444;
+}
+
+.entry-table th,
+.entry-table td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.entry-table th {
+  background-color: #f1f3f5;
+  font-weight: 700;
+  color: #555;
+  border-bottom: none;
+}
+
+.entry-table tbody tr {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.entry-table tr.income-row {
+  background-color: #e8f5e9;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
+}
+
+.entry-table tr.expense-row {
+  background-color: #fbeaea;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+}
+
+.entry-table tbody tr:hover {
+  background-color: #f0f4f8;
+  cursor: pointer;
+}
+
+.entry-table tr:last-child td {
+  border-bottom: none;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+ 
+  backdrop-filter: blur(3px);
+}
+
+.modal {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  width: 520px;
+  max-width: 90%;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  user-select: none;
+  animation: fadeInScale 0.3s ease forwards;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 470px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1.8rem 0.8rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.65rem 1.2rem;
+  font-weight: 700;
+  border: none;
+  width: 100px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.btn.save {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn.save:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 12px rgba(33, 136, 56, 0.4);
+}
+
+.btn.reset {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn.reset:hover {
+  background-color: #5a6268;
+  box-shadow: 0 4px 12px rgba(90, 98, 104, 0.4);
+}
+body.dark .income-expense-page,
+[data-theme="dark"] .income-expense-page {
+  background-color: #1e1e2f;
+  color: #e2e8f0;
+}
+body.dark .modal h2,body.dark .page-header h1{
+  color: #fff;
+}
+body.dark th{
+  color: #ffffff;
+}
+
+body.dark .income-expense-header h1,
+[data-theme="dark"] .income-expense-header h1 {
+  color: #e2e8f0;
+}
+
+body.dark .income-search-input,
+[data-theme="dark"] .income-search-input {
+  background-color: #2d2d44;
+  color: #f1f5f9;
+  border-color: #444c60;
+}
+
+body.dark .income-search-input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+body.dark .new-income-btn,
+body.dark .add-btn,
+[data-theme="dark"] .new-income-btn,
+[data-theme="dark"] .add-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+body.dark .new-income-btn:hover,
+body.dark .add-btn:hover {
+  background-color: #2563eb;
+}
+
+body.dark .summary .income {
+  background-color: #1f3f2d;
+  color: #7dd3fc;
+  border-color: #27ae60;
+}
+
+body.dark .summary .expense {
+  background-color: #3b1f1f;
+  color: #f87171;
+  border-color: #e74c3c;
+}
+
+body.dark .entry-table th,
+body.dark .income-table thead {
+  background-color: #2c2c3c;
+  color: #cbd5e1;
+}
+
+body.dark .entry-table td,
+body.dark .income-table td {
+  background-color: #262637;
+  color: #e2e8f0;
+}
+
+body.dark .entry-table tr.income-row {
+  background-color: #234032;
+}
+
+body.dark .entry-table tr.expense-row {
+  background-color: #402c2c;
+}
+
+body.dark .entry-table tbody tr:hover {
+  background-color: #374151;
+}
+
+body.dark .modal,
+[data-theme="dark"] .modal {
+  background-color: #2c2f3f;
+  color: #f1f5f9;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .form-group input,
+body.dark .form-group select,
+body.dark .form-group textarea {
+  background-color: #1e1e2f;
+  border-color: #444c60;
+  color: #e2e8f0;
+}
+
+body.dark .form-group label {
+  color: #cbd5e1;
+}
+
+body.dark .btn.save {
+  background-color: #22c55e;
+}
+
+body.dark .btn.reset {
+  background-color: #6b7280;
+  color: #f8fafc;
+}
+
+body.dark .income-total {
+  color: #e4e4e4;
+}
+
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal h2 {
+  margin-bottom: 1.2rem;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+  user-select: none;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.9rem 0.8rem;
+  border: 1.8px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.modal-actions .btn {
+  padding: 0.65rem 1.4rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-actions .save {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal-actions .save:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 15px rgba(33, 136, 56, 0.5);
+}
+
+.modal-actions .reset {
+  background-color: #6c757d;
+  color: white;
+}
+
+.modal-actions .reset:hover {
+  background-color: #5a6268;
+  box-shadow: 0 6px 15px rgba(90, 98, 104, 0.5);
+}
+
+.income-expense-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.income-expense-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  flex-grow: 1;
+  min-width: 180px;
+}
+
+.income-search-input {
+  height: 48px;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.income-search-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+/* Obecné nastavení */
+.page-section {
+  font-family: 'Segoe UI', sans-serif;
+  width: 80%;
+  margin: 18px 0;
+  position: relative;
+  left: 30px;
+}
+
+/* Hlavička stránky */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  gap: 0.5rem;
+}
+
+/* Tlačítko */
+.new-income-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: fit-content; /* nebo 180px pokud chceš pevnou šířku */
+  padding: 12px 40px 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex; /* lepší pro button s ikonou */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.new-income-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.new-income-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+}
+
+/* Vyhledávání */
+.search-bar-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.income-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.income-search-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Tabulka */
+.table-container {
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.income-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.income-table thead {
+  background-color: #f1f3f5;
+  font-weight: bold;
+  color: #333;
+}
+
+.income-table th,
+.income-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.income-table th.text-right,
+.income-table td.text-right {
+  text-align: right;
+}
+
+.no-data {
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+}
+
+/* Celková částka */
+.income-total {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5vh;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Formulář v modalu */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.modal .btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: 200px;
+}
+
+.modal .btn.save {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal .btn.reset {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.modal .btn.save:hover {
+  background-color: #0056b3;
+}
+
+.modal .btn.reset:hover {
+  background-color: #d6d6d6;
+}
+.form-group-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group-row .form-group.half {
+  flex: 1;
+}

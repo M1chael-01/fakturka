@@ -1,0 +1,130 @@
+.pricing-section {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.pricing-section .pricing-title {
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+  color: #4a148c;
+  font-weight: 700;
+}
+.pricing-section .pricing-subtitle{
+ color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.pricing-section .pricing-cards {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pricing-section .pricing-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 40px 30px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pricing-section .pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(74, 20, 140, 0.3);
+}
+
+.pricing-section .highlight {
+  border: 3px solid #7b3fe4;
+  box-shadow: 0 16px 40px rgba(123, 63, 228, 0.5);
+}
+
+.pricing-section .plan-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.pricing-section .plan-price {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #7b3fe4;
+}
+
+.plan-period {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.pricing-section .plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 32px;
+  color: #555;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+.pricing-section .plan-features li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.pricing-section .plan-features li::before {
+  content: "✔";
+  color: #7b3fe4;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.plan-btn-pricing {
+  background-color: #7b3fe4;
+  color: white;
+ width: 100%;
+ font-weight: 500;
+ border: 0;
+ font-size: 17.4px;
+ border-radius: 10px;
+ padding: 10px;
+}
+
+.pricing-section .plan-btn:hover {
+  background-color: #5a2ecc;
+}
+
+.pricing-section .btn-highlight {
+  box-shadow: 0 6px 20px rgba(123, 63, 228, 0.6);
+}
+
+/* Responsivita */
+@media (max-width: 1024px) {
+  .pricing-cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .pricing-cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .pricing-card {
+    width: 90%;
+  }
+}

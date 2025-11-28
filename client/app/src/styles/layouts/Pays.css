@@ -1,0 +1,136 @@
+.pays-container {
+  padding: 2rem;
+  width: 600px;
+  margin: 3em auto;
+  height: 82vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+body.dark .pays-container {
+  background: #1f2937;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Title */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+body.dark .section-title {
+  color: #f1f5f9;
+}
+
+/* Plan info */
+.plan-details {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plan-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+body.dark .plan-title {
+  color: #e2e8f0;
+}
+
+.plan-price {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+body.dark .plan-price {
+  color: #cbd5e1;
+}
+
+/* Features list */
+.plan-features {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-item {
+  margin: 0.3rem 0;
+  color: #444;
+}
+
+body.dark .feature-item {
+  color: #cbd5e1;
+}
+
+/* QR section */
+.qr-wrapper {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.qr-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+body.dark .qr-title {
+  color: #f8fafc;
+}
+
+.qr-instruction {
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 0.5rem;
+  margin-bottom: 10px;
+}
+
+body.dark .qr-instruction {
+  color: #94a3b8;
+}
+
+/* Payment link */
+.payment-link-box {
+  text-align: center;
+  margin-top: -30px;
+}
+
+.payment-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #0066cc;
+  color: #fff;
+  width: 80%;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.payment-link:hover {
+  background-color: #004d99;
+}
+
+body.dark .payment-link {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+body.dark .payment-link:hover {
+  background-color: #2563eb;
+}
+
+/* No plan message */
+.no-plan-message {
+  text-align: center;
+  font-size: 1rem;
+  color: #999;
+}
+
+body.dark .no-plan-message {
+  color: #94a3b8;
+}

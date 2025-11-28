@@ -1,0 +1,164 @@
+/* Sekce Podpora */
+.support-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.support-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Titulky */
+.support-container h2 {
+  font-size: 2.8rem;
+  color: #4a148c;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+ color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Sekce FAQ */
+.faq-section {
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.faq-item strong {
+  font-weight: 600;
+  color: #4a148c;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Formulář pro kontaktování podpory */
+.contact-support {
+  
+  padding: 30px;
+  border-radius: 12px;
+ 
+}
+
+.contact-support h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.support-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.support-form .form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.support-form .form-group input,
+.support-form .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.support-form .form-group input:focus,
+.support-form .form-group textarea:focus {
+  border-color: #7b3fe4;
+  outline: none;
+}
+
+.submit-btn {
+  background-color: #7b3fe4;
+  color: white;
+  font-weight: 700;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #5a2ecc;
+}
+
+@media (max-width: 768px) {
+  .support-container {
+    padding: 20px;
+  }
+
+  .faq-item {
+    font-size: 1rem;
+  }
+
+  .support-form .form-group input,
+  .support-form .form-group textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+  }
+}
+/* Sekce FAQ */
+.faq-section {
+  margin-top: 50px;
+}
+
+.faq-item {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 15px;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: #e6e6f2;
+}
+
+.faq-item p {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.faq-item strong {
+  font-weight: 600;
+  color: #4a148c;
+}
+
+.contact-btn {
+  background-color: #7b3fe4;
+  color: white;
+  padding: 17px 20px;
+  width: 500px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #5a2ecc;
+}

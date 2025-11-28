@@ -1,0 +1,8 @@
+/* 
+  Reset text decoration for all elements.
+  This removes underlines from links and other default text decorations,
+  ensuring a clean, consistent base styling across the entire application.
+*/
+* {
+  text-decoration: none;
+}

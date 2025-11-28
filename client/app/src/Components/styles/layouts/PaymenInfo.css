@@ -1,0 +1,43 @@
+.payment-info-box {
+  max-width: 500px;
+  margin: 150px auto;
+  padding: 40px 30px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #f4f6f8);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  height: 20vh;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.payment-info-box h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+.payment-info-box p {
+  font-size: 1.25rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.payment-info-box.success {
+  border-top: 6px solid #38a169; /* zelená */
+}
+
+.payment-info-box.cancel {
+  border-top: 6px solid #e53e3e; /* červená */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
